@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Abstract;
+using DataAccessLayer.Abstract;
 using EntityLayer.Concrete;
 using System;
 using System.Collections.Generic;
@@ -8,39 +9,38 @@ using System.Threading.Tasks;
 
 namespace BusinessLayer.Concrete
 {
-    public class reportmanager : genericservice<Reports>
+    public class reportmanager : reportinterfaceservice
     {
-        genericservice<Reports> _genericservice;
+        reportinterfacedal _reportinterfacedal;
 
-        public reportmanager(genericservice<Reports> genericservice)
+        public reportmanager(reportinterfacedal reportinterfacedal)
         {
-            _genericservice = genericservice;
+            _reportinterfacedal = reportinterfacedal;
         }
 
-        public void Tadd(Reports t)
+        public void TDeletel(Reports t)
         {
-            _genericservice.Tadd(t);
-        }
-
-        public void Tdel(Reports t)
-        {
-            
-            _genericservice.Tdel(t);
+            _reportinterfacedal.delete(t);
         }
 
         public Reports Tgetbyid(int id)
         {
-            return _genericservice.Tgetbyid(id);
+            return _reportinterfacedal.getbyId(id);
         }
 
-        public List<Reports> Tgetlist()
+        public List<Reports> TGetlist()
         {
-            return _genericservice.Tgetlist();
+            return _reportinterfacedal.getList();
         }
 
-        public void Tupdate(Reports t)
+        public void TInsert(Reports t)
         {
-            _genericservice.Tupdate(t);
+            _reportinterfacedal.insert(t);
+        }
+
+        public void TUpdate(Reports t)
+        {
+            _reportinterfacedal.update(t);
         }
     }
 }

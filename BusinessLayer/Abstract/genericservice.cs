@@ -8,10 +8,10 @@ namespace BusinessLayer.Abstract
 {
     public interface genericservice<T>
     {
-        void Tadd(T t);
-        void Tdel(T t);
-        void Tupdate(T t);
-        List<T> Tgetlist();
+        void TInsert(T t);
+        void TDeletel(T t);
+        void TUpdate(T t);
+        List<T> TGetlist();
         T Tgetbyid(int id);
     }
 }

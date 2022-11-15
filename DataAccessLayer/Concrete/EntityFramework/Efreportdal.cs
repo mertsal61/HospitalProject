@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.EntityFramework
 {
-    public class efreportdal:genericrepo<Reports>,reportinterfacedal
+    public class Efreportdal:genericrepo<Reports>,reportinterfacedal
     {
     }
 }
