@@ -26,6 +26,28 @@ namespace HospitalProject.Controllers
             return RedirectToAction("Index");
         }
 
+                
+        public IActionResult RaporSil(int id)
+        {
+            var value = reportmanager.Tgetbyid(id);
+            reportmanager.TDeletel(value);
+            return RedirectToAction("Index");
+        }
+        [HttpGet]
+        public IActionResult RaporGuncelle(int id)
+        {
+            var value=reportmanager.Tgetbyid(id);
+            return View(value);
+        }
+        [HttpPost]
+        public IActionResult RaporGuncelle(Reports p)
+        {
+            var value = reportmanager.Tgetbyid(p.reportId);
+            reportmanager.TUpdate(p);
+            return RedirectToAction("Index");
+
+        }
+
         
     }
 }

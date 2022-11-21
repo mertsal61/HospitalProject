@@ -12,7 +12,7 @@ namespace DataAccessLayer.Contexts
     {
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("server=MERT\\SQLEXPRESS;database=DbHospital;integrated security=true");
+            optionsBuilder.UseSqlServer("server=MERT\\SQLEXPRESS;database=DbHospital;integrated security=true;TrustServerCertificate=True;");
         }
 
         public DbSet<Reservations> reservations { get; set; }

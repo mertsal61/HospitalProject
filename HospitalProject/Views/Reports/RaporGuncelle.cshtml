@@ -1,0 +1,19 @@
+﻿@model  EntityLayer.Concrete.Reports
+@{
+    ViewData["Title"] = "RaporGuncelle";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+
+<form method="post">
+    @Html.Label("Rapor ID")
+    @Html.TextBoxFor(x => x.reportId, new { @class = "form-control" });
+    <br />
+    @Html.Label("Rapor Adı")
+    @Html.TextBoxFor(x => x.reportname, new { @class = "form-control" });
+    <br />
+    @Html.Label("Rapor Tarihi")
+    @Html.TextBoxFor(x => x.reportdate, new { @class = "form-control" });
+    <br />
+    <button class="btn btn-info">Rapor Güncelle</button>
+</form>
+
