@@ -48,6 +48,28 @@ namespace HospitalProject.Controllers
 
         }
 
+        [HttpGet]
+        public IActionResult RaporYukle(IFormFile userfile)
+        {
+            try
+            {
+
+            
+            string filename = userfile.FileName;
+            filename=Path.GetFileName(filename);
+            string uploadfilepath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot\\files", filename);
+            var stream = new FileStream(uploadfilepath, FileMode.Create);
+            userfile.CopyToAsync(stream);
+            ViewBag.message = "Dosya Yüklendi";
+            }catch(Exception ex)
+            {
+                ViewBag.message = "Error: "+ex.Message.ToString();
+            }
+            return View();
+            
+        }
         
+
+
     }
 }

@@ -13,6 +13,7 @@
         <th>Rapor Tarihi</th>
         <th>Sil</th>
         <th>Güncelle</th>
+        <th>EKLE</th>
     </tr>
     @foreach (var item in Model)
     {
@@ -22,6 +23,7 @@
             <td>@item.reportdate</td>
             <td><a href="/Report/RaporSil/@item.reportId" class="btn btn-outline-danger"></a>Sil</td>
             <td><a href="/Report/RaporGüncelle/@item.reportId" class="btn btn-outline-success"></a>Güncelle</td>
+            <td><a href="/Report/RaporYukle/@item." class="btn btn-outline-success"></a>EKLE</td>
             
         </tr>
     }

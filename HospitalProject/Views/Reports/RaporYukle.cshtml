@@ -1,0 +1,15 @@
+﻿@{
+    ViewData["Title"] = "RaporYukle";
+    Layout = "~/Views/Shared/_UILayout.cshtml";
+}
+@using (Html.BeginForm("Index", "Reports", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+
+            {
+                <span><b>Rapor Yükle</b></span>
+                <br /><span style="color:red,font-weight:bold">@ViewBag.message</span>
+                <br />
+                <input type="file" name="userfile" />
+                <br />
+                <input type="submit" value="upload" />
+            }
+

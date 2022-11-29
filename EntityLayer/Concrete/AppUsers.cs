@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EntityLayer.Concrete
 {
-    public class AppUsers:IdentityUser
+    public class AppUsers
     {
         public string Name { get; set; }
         public string Surname { get; set; }
